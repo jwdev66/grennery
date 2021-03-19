@@ -87,7 +87,7 @@ sequelize db:create <insert db name here>
 ```
 sequelize db:migrate
 ```
-6. Seed all the provinces
+6. Seed all the distribution zones
 ```
 sequelize db:seed:all
 ```
