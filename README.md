@@ -34,6 +34,8 @@ Click [here](https://whimsical.com/greenery-erd-P6bCadqEwB85K6B6UhSsXM) to view 
 
 I took inspiration from an app that my group is working on enhancing with AR capabilities for a grad class. I wanted to combine beautiful, user-friendly design with easy functionality. This inspiration was further solidified by my encounter of the beautiful global plants API, [Trefle](https://trefle.io./). 
 
+I also really want to refresh my skills with PostgreSQL and get back to the basics with SQL! My hope is to scale this up and perhaps refactor to a MERN stack once I gain more fluency in developing overall. 
+
 ----------------------------------------------------------
 ### Unsolved Problems
 
