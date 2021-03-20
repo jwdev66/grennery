@@ -10,16 +10,17 @@ router.get("/index", (req, res) => {
     res.send("explore page")
 })
 
-// GET /explore/:id - lists more info about a plant + any comments
-// show form to create a new comment and a option to save the plant 
-// to a user's garden if user is logged in
+// GET /explore/:id - lists more info about a plant and
+// an option to save the plant to a user's garden 
+// if user is logged in
 router.get("/:id", (req, res) => {
     res.send("more details about a plant")
 })
 
-// POST /explore/:id/comments - posts comments if user is logged in
-router.post("/:id/comments", isLoggedIn, (req, res) => {
-    res.send("comment data to db")
+// GET /plants/new - show form to add new plant to user's garden
+// router.get("/:id/new/:userId", isLoggedIn, (req, res) => {
+router.post("/:id/new/:userId", (req, res) => {
+    res.send("saving queried plant to garden")
 })
 
 module.exports = router

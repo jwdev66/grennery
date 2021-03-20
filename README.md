@@ -24,11 +24,10 @@ Click [here](https://whimsical.com/greenery-erd-P6bCadqEwB85K6B6UhSsXM) to view 
 1. As a user, I want to be able to search for plants in general and within my distribution zone. 
 2. As a user, I want to be able to read more details about a specific plant, including its growth descriptions and picture. 
 3. As a user, I want to be able to save the plant and store it in my virtual garden.
-4. As a user, I want to be able to comment on a plant and offer any additional insights I might have. 
-5. (**Stretch**) As a user, I want to be able to write notes about my saved plants to reflect on its growth progress.
-6. (**Stretch**) As a user, I want to be able to further keep track of plant's growth progress through a tracking form.  
-7. (**Stretch**) As a user, I want to be able to see data visualizations of my plant's growth process based on my progress tracker.
-8. (**Stretch**) As a user, I want to be able to have a settings page so I can update my account information.
+4. As a user, I want to be able to write notes about my saved plants to reflect on its growth progress.
+5. (**Stretch**) As a user, I want to be able to further keep track of plant's growth progress through a tracking form.  
+6. (**Stretch**) As a user, I want to be able to see data visualizations of my plant's growth process based on my progress tracker.
+7. (**Stretch**) As a user, I want to be able to have a settings page so I can update my account information.
 
 ----------------------------------------------------------
 ### Approach
