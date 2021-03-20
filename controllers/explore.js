@@ -17,10 +17,4 @@ router.get("/:id", (req, res) => {
     res.send("more details about a plant")
 })
 
-// GET /plants/new - show form to add new plant to user's garden
-// router.get("/:id/new/:userId", isLoggedIn, (req, res) => {
-router.post("/:id/new/:userId", (req, res) => {
-    res.send("saving queried plant to garden")
-})
-
 module.exports = router

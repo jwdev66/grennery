@@ -20,16 +20,26 @@ router.get("/:id", (req, res) => {
     res.send("more details about my saved plant")
 })
 
+// GET /garden/:id - delete user's plant
+// router.delete("/:id", isLoggedIn, (req, res) => {
+router.delete("/:id", (req, res) => {
+    console.log("deleting saved plant")
+})
+
 // POST /garden/:id/notes - posts notes if user is logged in
-// router.post("/:id/notes", isLoggedIn, (req, res) => {
-router.post("/:id/notes", (req, res) => {
+router.post("/:id/notes", isLoggedIn, (req, res) => {
     res.send("note data to db")
 })
 
+// GET /garden/:id/edit - show form to update saved plant
+// router.get("/:id/edit", isLoggedIn, (req, res) => {
+router.get("/:id/edit", (res, res) => {
+    res.send("update data to db")
+})
 
-// router.post("/new/:id", isLoggedIn, (req, res) => {
-router.get("/show/:id", isLoggedIn, (req, res) => {
-    res.send("showing specific plant id")
+// PUT /garden/:id/edit - updates saved plant to garden
+router.put("/:id/edit", isLoggedIn, (req, res) => {
+    res.send("update data to db")
 })
 
 module.exports = router

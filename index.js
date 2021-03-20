@@ -50,8 +50,8 @@ app.use(express.urlencoded({extended: true })); //Parse URL-encoded bodies
 // // use controllers
 app.use("/auth", require("./controllers/auth.js"))
 // app.use("/plants", require("./controllers/plants.js"))
-// app.use("/garden", require("./controllers/garden.js"))
-// app.use("/explore", require("./controllers/explore.js"))
+app.use("/garden", require("./controllers/garden.js"))
+app.use("/explore", require("./controllers/explore.js"))
 
 // landing route - 
 // short description of mission + call to action to sign up
