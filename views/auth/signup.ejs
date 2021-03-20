@@ -1,0 +1,31 @@
+<div class="signup">
+    <div class="container-sm">
+        <div id="logo">
+            <h1>Let's grow together.</h1>
+        </div>  
+        <h2>Join the community.</h2>
+    </div>
+    <div class="container-sm">
+        <form method="POST" action="/auth/signup">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="new-username">Username</label>
+                    <input type="text" class="form-control" name="username" id="new-username">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="new-password">Password</label>
+                    <input type="password" class="form-control" name="password" id="new-password">
+                </div> 
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="new-email">Email</label>
+                    <input type="text" class="form-control" name="email" id="new-email">
+                </div>
+            </div>
+            <div class="text-center">
+                <input type="submit" id="signupbtn" class="btn btn-danger" value="Sign Up">
+            </div>
+        </form>
+    </div>
+</div>
