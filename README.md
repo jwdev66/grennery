@@ -28,6 +28,7 @@ Click [here](https://whimsical.com/greenery-erd-P6bCadqEwB85K6B6UhSsXM) to view 
 5. (**Stretch**) As a user, I want to be able to write notes about my saved plants to reflect on its growth progress.
 6. (**Stretch**) As a user, I want to be able to further keep track of plant's growth progress through a tracking form.  
 7. (**Stretch**) As a user, I want to be able to see data visualizations of my plant's growth process based on my progress tracker.
+8. (**Stretch**) As a user, I want to be able to have a settings page so I can update my account information.
 
 ----------------------------------------------------------
 ### Approach
