@@ -13,8 +13,9 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      models.user.hasMany(models.plant)
       models.user.hasMany(models.comment)
-      models.user.hasMany(models.tip)
+      models.user.hasMany(models.note)
     }
   };
   user.init({
@@ -56,7 +57,7 @@ module.exports = (sequelize, DataTypes) => {
   //   await bcrypt.hash(pendingUser.password, 10) // <- 10 = # of salt rounds
   //   .then(hashedPassword=>{
   //     console.log(`${pendingUser.password} became -----> ${hashedPassword}`)
-  //     // eplace the OG password with the hash
+  //     // replace the OG password with the hash
   //     pendingUser.password = hashedPassword
   //   })
   // })
