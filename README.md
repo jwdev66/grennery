@@ -88,10 +88,6 @@ sequelize db:create <insert db name here>
 ```
 sequelize db:migrate
 ```
-6. Seed all the distribution zones
-```
-sequelize db:seed:all
-```
-7. Add `SESSION_SECRET` and `PORT` environment variables in a `.env` file (can be any string). If planning to use a maps API, make sure you put that as an environment variable as well.
+6. Add `SESSION_SECRET` and `PORT` environment variables in a `.env` file (can be any string). If planning to use a maps API, make sure you put that as an environment variable as well.
 
 
