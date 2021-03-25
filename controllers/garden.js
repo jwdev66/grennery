@@ -33,7 +33,7 @@ router.post("/:id/notes", isLoggedIn, (req, res) => {
 
 // GET /garden/:id/edit - show form to update saved plant
 // router.get("/:id/edit", isLoggedIn, (req, res) => {
-router.get("/:id/edit", (res, res) => {
+router.get("/:id/edit", (req, res) => {
     res.send("update data to db")
 })
 
