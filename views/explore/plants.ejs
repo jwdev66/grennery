@@ -6,13 +6,11 @@
         Like a plant? Save it to your garden and utilize our tracker to keep notes on your plants progress! 
     </p>
 
-    <div class="text-center">
-        <form action="/explore/plants" method="GET">
-            <label for="plantName">Find a plant:</label>
-            <input type="text" name="q" id="plantName">
-            <input type="submit">
-        </form>
-    </div>
-    
+    <% plant.forEach(function(plant) { %>
+        <div class="well">
+            <h2><%= plant.common_name %></h2>
+            <h5><%= plant.scientific_name %></h5>
+        </div>
+    <% }) %>
 
 </div>
