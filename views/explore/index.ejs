@@ -1,0 +1,17 @@
+<div class="container">
+    <p class="text-center">
+        Greenery is for those who love planning just as much as they love gardening. Leveraging Trefle, a global plants API, you’ll have the chance to learn more about plants, especially plants native to your current garden’s location. 
+        <br/>
+        <br/>
+        Like a plant? Save it to your garden and utilize our tracker to keep notes on your plants progress! 
+    </p>
+
+
+    <% plant.forEach(function(plant) { %>
+        <div class="well">
+            <h2><%= plant.common_name %></h2>
+            <h5><%= plant.scientific_name %></h5>
+        </div>
+    <% }) %>
+
+</div>

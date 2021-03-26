@@ -8,14 +8,18 @@ const axios = require("axios")
 // GET /explore - shows a form to users to search through
 // Trefle's global plant database; renders query results 
 router.get("/index", (req, res) => {
-    axios.get(`https://trefle.io/api/v1/plants?&token=${process.env.ACCESS_TOKEN}`)
+    const plantUrl = `https://trefle.io/api/v1/plants?&token=${process.env.ACCESS_TOKEN}`
+    axios.get(plantUrl)
     .then(response => {
-        res.send(response.data)
+        const plant = response.data.data
+        // console.log(plant)
+        res.render('explore/index', { plant: plant })
     })
     .catch(err => {
-        console.log("errrrrrr!!:", err)
+        console.log("errrrr!!!:", err)
     })
 })
+
 
 // GET /explore/:id - lists more info about a plant and
 // an option to save the plant to a user's garden 
