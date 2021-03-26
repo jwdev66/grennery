@@ -9,7 +9,7 @@ const isLoggedIn = require("../middleware/isLoggedIn")
 // from user's garden and to read more about a plant
 // router.get("/index", isLoggedIn, (req, res) => {
 router.get("/index", (req, res) => {
-    res.send("welcome to my garden!")
+    res.render("garden/index")
 })
 
 // GET /garden/:id - lists more info about a plant + any notes

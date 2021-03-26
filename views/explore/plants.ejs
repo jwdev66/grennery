@@ -8,8 +8,12 @@
 
     <% plant.forEach(function(plant) { %>
         <div class="well">
+            <div>
+                <img width="25%" src="<%= plant.image_url %>" alt="<%= plant.common_name %>" class="img-thumbnail">
+            </div>
             <h2><%= plant.common_name %></h2>
             <h5><%= plant.scientific_name %></h5>
+            <button onclick="document.location='/explore/<%= plant.id %>'">Learn More</button> 
         </div>
     <% }) %>
 

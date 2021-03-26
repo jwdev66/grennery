@@ -25,7 +25,6 @@ router.get("/plants", (req, res) => {
     axios.get(plantUrl, qs)
     .then(response => {
         const results = response.data.data
-        console.log(results)
         res.render('explore/plants', { plant: results })
     })
     .catch(err => {
@@ -38,7 +37,23 @@ router.get("/plants", (req, res) => {
 // an option to save the plant to a user's garden 
 // if user is logged in
 router.get("/:id", (req, res) => {
-    res.send("more details about a plant")
+    let id = req.params.id
+
+    const plantUrl = `https://trefle.io/api/v1/plants/${id}?&token=${process.env.ACCESS_TOKEN}`
+
+    axios.get(plantUrl)
+    .then(response => {
+        const results = response.data.data
+        const plantDis = response.data.data.main_species.distribution
+        const plantSpecs = response.data.data.main_species.specifications
+        const growSpecs= response.data.data.main_species.growth
+
+        console.log(results)
+        res.render('explore/plant', { plant: results, native: plantDis, grow: plantSpecs, growth: growSpecs })
+    })
+    .catch(err => {
+        console.log("errrrr!!!:", err)
+    })
 })
 
 module.exports = router

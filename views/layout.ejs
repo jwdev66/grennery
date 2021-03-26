@@ -21,6 +21,7 @@
             <div class="navbar-nav mr-auto" id="navbar">
               <% if (!currentUser) { %>
                 <li class="nav-link"><a href="/auth/login">Log In</a></li>
+                <li class="nav-link"><a href="/explore/index">Explore</a></li>
               <% } else { %>
                 <a class="nav-link active" href="/home/index">Home <span class="sr-only">(current)</span></a>
                 <a class="nav-link" href="/auth/logout">Log Out</a>
