@@ -7,22 +7,19 @@ const isLoggedIn = require("../middleware/isLoggedIn")
 // GET /garden - shows all user's saved plants from
 // Trefle's global plant database with options to delete a plant
 // from user's garden and to read more about a plant
-// router.get("/index", isLoggedIn, (req, res) => {
-router.get("/index", (req, res) => {
+router.get("/index", isLoggedIn, (req, res) => {
     res.render("garden/index")
 })
 
 // GET /garden/:id - lists more info about a plant + any notes
 // show form to create a new note and a option to delete the plant 
 // from user's garden if user is logged in
-// router.get("/:id", isLoggedIn, (req, res) => {
-router.get("/:id", (req, res) => {
+router.get("/:id", isLoggedIn, (req, res) => {
     res.send("more details about my saved plant")
 })
 
 // GET /garden/:id - delete user's plant
-// router.delete("/:id", isLoggedIn, (req, res) => {
-router.delete("/:id", (req, res) => {
+router.delete("/:id", isLoggedIn, (req, res) => {
     console.log("deleting saved plant")
 })
 
@@ -32,8 +29,7 @@ router.post("/:id/notes", isLoggedIn, (req, res) => {
 })
 
 // GET /garden/:id/edit - show form to update saved plant
-// router.get("/:id/edit", isLoggedIn, (req, res) => {
-router.get("/:id/edit", (req, res) => {
+router.get("/:id/edit", isLoggedIn, (req, res) => {
     res.send("update data to db")
 })
 
