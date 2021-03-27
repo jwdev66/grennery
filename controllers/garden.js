@@ -42,14 +42,10 @@ router.get("/index/:id", isLoggedIn, (req, res) => {
 // GET /garden/:id - lists more info about a plant + any notes
 // show form to create a new note and a option to delete the plant 
 // from user's garden if user is logged in
-router.get("/:id", isLoggedIn, (req, res) => {
+router.get("/plant/:id", isLoggedIn, (req, res) => {
     res.send("more details about my saved plant")
 })
 
-// GET /garden/:id - delete user's plant
-router.delete("/:id", isLoggedIn, (req, res) => {
-    console.log("deleting saved plant")
-})
 
 // POST /garden/:id/notes - posts notes if user is logged in
 router.post("/:id/notes", isLoggedIn, (req, res) => {

@@ -15,6 +15,11 @@
                         <div class="container-sm">
                             <a href="/explore/<%= plant.slug %>" class="card-link, btn btn-info">Learn More</a>
                         </div> 
+                        <div id="deletebtn">
+                            <form method="POST" action="/plant/<%= plant.id %>/?_method=DELETE">
+                                <input type="submit" value="x" class="card-link btn btn-danger">
+                            </form>
+                        </div>
                     </div>
                 </div>
             <% }) %>
