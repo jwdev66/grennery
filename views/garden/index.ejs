@@ -1,1 +1,25 @@
 <h1> Welcome to your garden, <%= currentUser.username %>! </h1>
+
+<div class="container">
+    <h2>My Garden:</h2>
+    <div>
+        <% if(user && user.plants) { %>
+            <% user.plants.forEach(plant => { %>
+                <div id="info" class="card shadow-sm p-3 mb-5 bg-white rounded" style="width: 18rem;">
+                    <div class="card-body">
+                        <div>
+                            <img width="25%" src="<%= plant.image_url %>" alt="<%= plant.name %>" class="img-thumbnail">
+                        </div>
+                        <h2><%= plant.name %></h2>
+                        <h5><%= plant.scientificName %></h5>
+                        <div class="container-sm">
+                            <a href="/explore/<%= plant.slug %>" class="card-link, btn btn-info">Learn More</a>
+                        </div> 
+                    </div>
+                </div>
+            <% }) %>
+        <% } else { %>
+        <h3>No plants saved yet! <a href="/explore/index"> Find a plant! </a></h3>
+        <% } %>
+    </div>
+</div>
