@@ -83,7 +83,7 @@ npm i
 ```
 sequelize db:create <insert db name here>
 ```
-5. Migrate the `user` model to your database
+5. Migrate the models to your database
 ```
 sequelize db:migrate
 ```

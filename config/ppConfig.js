@@ -29,7 +29,7 @@ const findAndLogInUser = (username, password, doneCallback) => { // database cal
         }
         // if there isn't a found user or valid password (bycrypt function that validates the password), return a null and send back "false" 
         if (!foundUser || !match) { 
-            console.log("password was NOT validate i.e. match is false")
+            console.log("password was NOT validated i.e. match is false")
             return doneCallback(null, false)
         } else { // user was legit, send the found user object
             return doneCallback(null, foundUser); 

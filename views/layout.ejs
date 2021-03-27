@@ -12,26 +12,45 @@
 </head>
 <body>
   <header>
-      <nav class="navbar navbar-expand-lg navbar-light text-center">
-        <a class="navbar-brand text-center" href="/">
-          <img src="https://i.imgur.com/l5dOyZI.png" alt="logo-pic" class="logo-pic">
-        </a>
+    <div class="align-items-center d-flex justify-content-around">
+      <nav class="navbar navbar-expand-lg navbar-light">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-          <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup">
-            <div class="navbar-nav mr-auto" id="navbar">
-              <% if (!currentUser) { %>
-                <li class="nav-link"><a href="/auth/login">Log In</a></li>
-                <li class="nav-link"><a href="/explore/index">Explore</a></li>
-              <% } else { %>
-                <button class="btn landing-btn" onclick="document.location='/garden/index/<%= currentUser.id %>'">Garden</button>
-                <a class="nav-link active" href="/explore/index">Explore <span class="sr-only">(current)</span></a>
-                <a class="nav-link" href="/auth/logout">Log Out</a>
-              <% } %>
-            </div>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup">
+          <div class="navbar-nav mr-auto" id="navbar">
+            <% if (!currentUser) { %>
+              <li class="nav-link"><a href="/auth/login">Log In</a></li>
+              <a class="navbar-brand text-center" href="/">
+                <img src="https://i.imgur.com/l5dOyZI.png" alt="logo-pic" class="logo-pic">
+              </a>
+              <li class="nav-link"><a href="/explore/index">Explore</a></li>
+            <% } else { %>
+              <div class="container">
+                <div class="row"> 
+                  <div class="col-sm">
+                    <a class="navbar-brand text-center column" href="/">
+                      <img src="https://i.imgur.com/l5dOyZI.png" alt="logo-pic" class="logo-pic">
+                    </a>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <button class="btn landing-btn" onclick="document.location='/garden/index/<%= currentUser.id %>'">Garden</button>
+                  </div>
+                  <div class="col">
+                    <a class="nav-link active" href="/explore/index">Explore <span class="sr-only">(current)</span></a>
+                  </div>
+                  <div class="col">
+                    <a class="nav-link" href="/auth/logout">Log Out</a>
+                  </div>
+                </div>
+              </div>
+            <% } %>
           </div>
+        </div>
       </nav>
+    </div>
   </header>
   <%- include('partials/alerts.ejs') %>
   <%- body %> 
