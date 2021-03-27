@@ -14,6 +14,9 @@ module.exports = {
       scientificName: {
         type: Sequelize.STRING
       },
+      nickname: {
+        type: Sequelize.STRING
+      },
       slug: {
         type: Sequelize.STRING
       },

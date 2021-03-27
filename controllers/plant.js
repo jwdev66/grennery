@@ -21,5 +21,19 @@ router.delete("/:id", isLoggedIn, (req, res) => {
     })
 })
 
-
+router.put("/:id", isLoggedIn, (req, res) => {
+    let id = req.params.id
+    let userId = req.user.id
+    db.plant.findOne({
+        id: id
+    })
+    .then(foundPlant => {
+        foundPlant.updateAttributes({
+            nickname: req.body.nickname
+        })
+    })
+    .catch((err) => {
+        console.log("errrrrrrr!!!!:", err)
+    })
+})
 module.exports = router
