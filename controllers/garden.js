@@ -3,6 +3,21 @@ const router = express.Router()
 const db = require("../models")
 const isLoggedIn = require("../middleware/isLoggedIn")
 
+// POST /garden/new - posts saved plant from query to garden if user is logged in
+router.post("/new/:id", isLoggedIn, (req, res) => {
+    let id = req.params.id
+    db.plant.create({
+        name: req.body.name,
+        scientificName: req.body.scientificName,
+        image: req.body.image,
+        userId: id
+    })
+    .then((savedPlant) => {
+        console.log("Here's the saved plant:", savedPlant)
+        res.redirect(`garden/index/${id}`)
+    })
+    res.send("note data to db")
+})
 
 // GET /garden - shows all user's saved plants from
 // Trefle's global plant database with options to delete a plant
@@ -21,8 +36,6 @@ router.get("/index/:id", isLoggedIn, (req, res) => {
     })
     res.render("garden/index")
 })
-
-
 
 // GET /garden/:id - lists more info about a plant + any notes
 // show form to create a new note and a option to delete the plant 

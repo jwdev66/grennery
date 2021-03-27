@@ -29,9 +29,9 @@
         <% if (!currentUser) { %>
             <li class="nav-link"><a href="/auth/login">Log in to add to your garden</a></li>
           <% } else { %>
-            <form action="/garden/index" method="POST">
+            <form action="/garden/new/<%= currentUser.id %>" method="POST">
                 <input hidden type="text" name="name" value="<%= plant.common_name %>">
-                <input hidden type="text" name="scientific_name" value="<%= plant.scientific_name %>">
+                <input hidden type="text" name="scientificName" value="<%= plant.scientific_name %>">
                 <input hidden type="text" name="image" value="<%= plant.image_url %>">
                 <button class="btn btn-primary" type="submit">Add to Garden</button>
             </form>
