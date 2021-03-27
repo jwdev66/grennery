@@ -7,9 +7,22 @@ const isLoggedIn = require("../middleware/isLoggedIn")
 // GET /garden - shows all user's saved plants from
 // Trefle's global plant database with options to delete a plant
 // from user's garden and to read more about a plant
-router.get("/index", isLoggedIn, (req, res) => {
+router.get("/index/:id", isLoggedIn, (req, res) => {
+    db.user.findOne({
+        include: [db.plant],
+        where: { id: req.params.id }
+    })
+    .then((user) => {
+        console.log(user)
+        res.render("garden/index", { user })
+    })
+    .catch((err) => {
+        console.log("errrrrrrr!!!!:", err)
+    })
     res.render("garden/index")
 })
+
+
 
 // GET /garden/:id - lists more info about a plant + any notes
 // show form to create a new note and a option to delete the plant 

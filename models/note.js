@@ -12,10 +12,12 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       models.note.belongsTo(models.user)
-      models.note.belongsTo(models.plant);
+      models.note.belongsTo(models.plant)
     }
   };
   note.init({
+    userId: DataTypes.INTEGER,
+    plantId: DataTypes.INTEGER,
     date: DataTypes.DATE,
     note: DataTypes.TEXT
   }, {
