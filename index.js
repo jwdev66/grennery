@@ -12,6 +12,7 @@ const methodOverride = require("method-override")
 // body parser middleware to make req.body work
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
+
 // set up ejs and ejs layouts
 app.set("view engine", "ejs")
 app.use(ejsLayouts)

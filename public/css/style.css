@@ -1,5 +1,11 @@
 body {
-    font-family: 'Zilla Slab', serif;
+    font-family: 'Barlow', sans-serif;
+    background-color: #096771;
+    color: #B9D9EB
+}
+.logo-pic {
+    width: 181px;
+    height: 95px
 }
 #home-index {
     width: 50rem;
@@ -26,13 +32,14 @@ body {
 .login, .signup{
     margin: 10px auto;
     padding: 10px;
-    border: 1px solid red;
+    color: #096771;
+    background-color: #B9D9EB;
     border-radius: 5px;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.219);
 }
 .signup {
     width: 30rem;
-    height: 30rem;
+    height: 25rem;
 }
 .login {
     width: 30rem;
@@ -47,41 +54,35 @@ body {
     font-size: 30px;
     color: rgb(37, 13, 13);
 }
-.landing-vid {
-    justify-content: center;
-    align-self: center;
+.landing {
+    max-width: 50%;
+    align-items: center;
+    padding: 100px 0px 0px 0px;
 }
-#landing-top {
+
+.landing-text {
+    color: #FFFFFF;
+    padding: .5rem;
+}
+.landing-btn-group{
+    align-items: center;
+    padding: .5rem;
+}
+.join-container {
+    justify-content: right;
+}
+.landing-btn {
+    border-color: #C8D692;
+    background-color: #3A2618;
+    color: #C8D692;
+}
+.landing-pic {
     margin: auto;
-    height: 60 rem;
-    justify-content: center;
-    align-self: center;
-    padding: 10px;
-    background-image: url("https://namwartravel.com/wp-content/uploads/2018/06/IMG_2925.jpg");
-    background-size: cover;
 }
 #landing-footer {
     margin: auto;
     justify-content: center;
     align-self: center;
-}
-#landing-card {
-    border: 1px solid red;
-    border-radius: 5px;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.219);
-}
-#landing-title {
-    font-size:30px;
-    font-family: 'Zilla Slab', serif;
-}
-#landing-message {
-    margin: 10px auto;
-    font-size:14px;
-    font-family: 'M PLUS Rounded 1c', sans-serif;
-}
-#logo {
-    font-family: 'Archivo Black', sans-serif;
-    font-size: 50px;
 }
 #home {
     font-family: 'Archivo Black', sans-serif;

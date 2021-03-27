@@ -48,7 +48,6 @@ router.get("/:id", (req, res) => {
         const plantSpecs = response.data.data.main_species.specifications
         const growSpecs= response.data.data.main_species.growth
 
-        console.log(results)
         res.render('explore/plant', { plant: results, native: plantDis, grow: plantSpecs, growth: growSpecs })
     })
     .catch(err => {
