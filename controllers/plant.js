@@ -28,7 +28,7 @@ router.put("/:id", isLoggedIn, (req, res) => {
     db.plant.update({
         nickname: req.body.nickname,
     },{
-        where: {userId: userId},
+        where: {id: id},
         include: [db.user]
     })
     .then((updatedPlant) => {
