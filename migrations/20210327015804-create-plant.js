@@ -14,6 +14,9 @@ module.exports = {
       scientificName: {
         type: Sequelize.STRING
       },
+      slug: {
+        type: Sequelize.STRING
+      },
       image: {
         type: Sequelize.STRING
       },

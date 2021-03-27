@@ -33,6 +33,7 @@
                 <input hidden type="text" name="name" value="<%= plant.common_name %>">
                 <input hidden type="text" name="scientificName" value="<%= plant.scientific_name %>">
                 <input hidden type="text" name="image" value="<%= plant.image_url %>">
+                <input hidden type="slug" name="slug" value="<%= plant.slug %>">
                 <button class="btn btn-primary" type="submit">Add to Garden</button>
             </form>
         <% } %>
