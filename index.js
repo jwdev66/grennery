@@ -49,7 +49,7 @@ app.use(express.urlencoded({extended: true })); //Parse URL-encoded bodies
 
 // // use controllers
 app.use("/auth", require("./controllers/auth.js"))
-app.use("/plants", require("./controllers/plant.js"))
+app.use("/plant", require("./controllers/plant.js"))
 app.use("/garden", require("./controllers/garden.js"))
 app.use("/explore", require("./controllers/explore.js"))
 
