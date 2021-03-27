@@ -37,7 +37,6 @@ router.get("/index/:id", isLoggedIn, (req, res) => {
     .catch((err) => {
         console.log("errrrrrrr!!!!:", err)
     })
-    res.render("garden/index")
 })
 
 // GET /garden/:id - lists more info about a plant + any notes
