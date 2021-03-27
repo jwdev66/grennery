@@ -10,13 +10,16 @@ router.post("/new/:id", isLoggedIn, (req, res) => {
         name: req.body.name,
         scientificName: req.body.scientificName,
         image: req.body.image,
+        slug: req.body.slug,
         userId: id
     })
     .then((savedPlant) => {
         console.log("Here's the saved plant:", savedPlant)
-        res.redirect(`garden/index/${id}`)
+        res.redirect(`/garden/index/${id}`)
     })
-    res.send("note data to db")
+    .catch(err => {
+        console.log("errrr saving plant to garden:", err)
+    })
 })
 
 // GET /garden - shows all user's saved plants from
