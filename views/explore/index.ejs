@@ -1,18 +1,19 @@
-<div class="container">
-    <p class="text-center">
-        Greenery is for those who love planning just as much as they love gardening. Leveraging Trefle, a global plants API, you’ll have the chance to learn more about plants, especially plants native to your current garden’s location. 
-        <br/>
-        <br/>
-        Like a plant? Save it to your garden and utilize our tracker to keep notes on your plants progress! 
-    </p>
-
-    <div class="text-center">
+<div class="container explore-container">
+    <div class="text-center explore-text">
+        <p>
+            Greenery is for those who love planning just as much as they love gardening. Leveraging Trefle, a global plants API, you’ll have the chance to learn more about plants, especially plants native to your current garden’s location. 
+            <br/>
+            <br/>
+            Like a plant? Save it to your garden and utilize our tracker to keep notes on your plants progress! 
+        </p>
+    </div>
+    <div class="text-center explore-form">
         <form action="/explore/plants" method="GET">
-            <label for="plantName">Find a plant:</label>
-            <input type="text" name="q" id="plantName">
-            <input type="submit">
+            <strong>
+                <label for="plantName">Search a plant:</label>
+            </strong>
+            <input class="explore-input" type="text" name="q" id="plantName">
+            <input class="btn landing-btn" type="submit" value="Search">
         </form>
     </div>
-    
-
 </div>

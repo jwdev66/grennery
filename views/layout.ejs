@@ -20,11 +20,15 @@
         <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup">
           <div class="navbar-nav mr-auto" id="navbar">
             <% if (!currentUser) { %>
-              <li class="nav-link"><a href="/auth/login">Log In</a></li>
+              <li class="nav-link">
+                <button class="btn nav-btn" onclick="document.location='/auth/login'">Log In</button>
+              </li>
               <a class="navbar-brand text-center" href="/">
                 <img src="https://i.imgur.com/l5dOyZI.png" alt="logo-pic" class="logo-pic">
               </a>
-              <li class="nav-link"><a href="/explore/index">Explore</a></li>
+              <li class="nav-link">
+                <button class="btn nav-btn" onclick="document.location='/explore/index'">Explore</button>
+              </li>
             <% } else { %>
               <div class="container">
                 <div class="row"> 

@@ -1,38 +1,33 @@
-<h1> Welcome to your garden, <%= currentUser.username %>! </h1>
-
-<div class="container">
-    <h2>My Garden:</h2>
-    <div>
-        <% if(user && user.plants) { %>
-            <% user.plants.forEach(plant => { %>
-                <div id="info" class="card shadow-sm p-3 mb-5 bg-white rounded" style="width: 18rem;">
-                    <div class="card-body">
-                        <div>
-                            <img width="25%" src="<%= plant.image %>" alt="<%= plant.name %>" class="img-thumbnail">
+<div class="container user-garden">
+    <div class="container">
+        <h2 class="capitalize"><%= currentUser.username %>'s Garden:</h2>
+        <div>
+            <% if(user && user.plants) { %>
+                <div class="container garden-container rounded d-flex justify-content-center flex-nowrap">
+                    <% user.plants.forEach(plant => { %>
+                        <div id="info" class="plant-card col rounded container">
+                            <div class="row">
+                                <div class="col">
+                                    <h5 class="capitalize plant-title"><%= plant.name %></h5>
+                                </div>
+                                <div class="col">
+                                    <h6 class="capitalize plant-secondary">Nickname: <%= plant.nickname %></h6>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <a href="/explore/<%= plant.slug %>" class="card-link, btn btn-info">Details</a>
+                                <div id="deletebtn">
+                                    <form method="POST" action="/plant/<%= plant.id %>/?_method=DELETE">
+                                        <input type="submit" value="-" class="card-link btn btn-danger">
+                                    </form>
+                                </div>
+                            </div> 
                         </div>
-                        <h2><%= plant.name %></h2>
-                        <h5><%= plant.scientificName %></h5>
-                        <h6><%= plant.nickname %></h6>
-                        <div class="container-sm">
-                            <a href="/explore/<%= plant.slug %>" class="card-link, btn btn-info">Learn More</a>
-                        </div> 
-                        <div id="deletebtn">
-                            <form method="POST" action="/plant/<%= plant.id %>/?_method=DELETE">
-                                <input type="submit" value="x" class="card-link btn btn-danger">
-                            </form>
-                        </div>
-                        <div id="deletebtn">
-                            <form method="POST" action="/plant/<%= plant.id %>/?_method=PUT">
-                                <label for="tip-address">Update Nickname</label>
-                                <input type="text" class="form-control" name="nickname" id="plant-nickname">
-                                <input type="submit"class="btn btn-warning" value="Update">
-                            </form>
-                        </div>
-                    </div>
+                    <% }) %>
                 </div>
-            <% }) %>
-        <% } else { %>
-        <h3>No plants saved yet! <a href="/explore/index"> Find a plant! </a></h3>
-        <% } %>
+            <% } else { %>
+            <h3>No plants saved yet! <a href="/explore/index"> Find a plant! </a></h3>
+            <% } %>
+        </div>
     </div>
 </div>
