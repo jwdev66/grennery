@@ -24,7 +24,6 @@ router.delete("/:id", isLoggedIn, (req, res) => {
 // UPDATE /plant/:id - update a user's plant's nickname
 router.put("/:id", isLoggedIn, (req, res) => {
     let id = req.params.id
-    let userId = req.user.id
     db.plant.update({
         nickname: req.body.nickname,
     },{
@@ -32,8 +31,8 @@ router.put("/:id", isLoggedIn, (req, res) => {
         include: [db.user]
     })
     .then((updatedPlant) => {
-        console.log("Here's the updated tip:", updatedPlant)
-        res.redirect(`/garden/index/${userId}`)
+        console.log("Here's the updated plant:", updatedPlant)
+        res.redirect(`/garden/plant/${id}`)
     })
     .catch((err) => {
         console.log("errrrrrrrr!!!", err)

@@ -43,7 +43,19 @@ router.get("/index/:id", isLoggedIn, (req, res) => {
 // show form to create a new note and a option to delete the plant 
 // from user's garden if user is logged in
 router.get("/plant/:id", isLoggedIn, (req, res) => {
-    res.send("more details about my saved plant")
+    db.plant.findOne({
+        where: {id: req.params.id},
+        include: [db.note] 
+    })
+    .then((plant) => {
+        if (!plant) throw Error()
+        console.log(plant.userId)
+        console.log(plant.notes)
+        res.render("garden/plant", { plant: plant })
+    })
+    .catch((err) => {
+        console.log("errrrrrrrr!!!", err)
+    })
 })
 
 

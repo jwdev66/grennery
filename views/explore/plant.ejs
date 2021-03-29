@@ -2,34 +2,42 @@
     <p class="text-center">
         Here's more info about your plant: 
     </p>
-    <div class="container text-center">
-        <div>
-            <img width="25%" src="<%= plant.image_url %>" alt="<%= plant.common_name %>" class="img-thumbnail">
-        </div>
-        <h2><%= plant.common_name %></h2>
-        <h5><%= plant.scientific_name %></h5>
-        <h5><%= plant.duration %></h5>
-        <p>Native to: <%= native.native %></p>
-        <p>Growth Habit: <%= grow.growth_habit %></p>
-        <p>Average Height: <%= grow.average_height.cm %> cm</p>
-        <p>Light Needed: <%= growth.light %></p>
-        <p>Bloom: <%= growth.bloom_months %></p>
-        <p>Soil Texture: <%= growth.soil_texture %></p>
-        <p>Min Water:<%= growth.minimum_precipitation.mm %></p>
-        <p>Max Water:<%= growth.maximum_precipitation.mm %></p>
-        <p>Min Temp: <%= growth.minimum_temperature.deg_f %></p>
-        <p>Max Temp<%= growth.maximum_temperature.deg_f %></p>
-        <p>Atmospheric Humidity: <%= growth.atmospheric_humidity %></p>
-        <% if (!currentUser) { %>
-            <li class="nav-link"><a href="/auth/login">Log in to add to your garden</a></li>
-          <% } else { %>
-            <form action="/garden/new/<%= currentUser.id %>" method="POST">
-                <input hidden type="text" name="name" value="<%= plant.common_name %>">
-                <input hidden type="text" name="scientificName" value="<%= plant.scientific_name %>">
-                <input hidden type="text" name="image" value="<%= plant.image_url %>">
-                <input hidden type="text" name="slug" value="<%= plant.slug %>">
-                <button class="btn btn-primary" type="submit">Add to Garden</button>
-            </form>
-        <% } %>
+    <div class="container explore-card">
+        <div class="card mb-3">
+            <div class="card-img-top">
+                <img class="explore-img rounded mx-auto d-block" src="<%= plant.image_url %>" alt="<%= plant.common_name %>">
+            </div>
+            <div class="col-md-12">
+            <div class="card-body">
+                <h5 class="card-title capitalize"><%= plant.common_name %></h5>
+                <p class="card-text">
+                <h5 class="capitalize">Scientific Name: <%= plant.scientific_name %></h5>
+                <h5>Plant Duration: <%= plant.duration %></h5>
+                <p>Native to: <%= native.native %></p>
+                <p>Growth Habit: <%= grow.growth_habit %></p>
+                <p>Average Height: <%= grow.average_height.cm %> cm</p>
+                <p>Light Needed: <%= growth.light %></p>
+                <p>Bloom: <%= growth.bloom_months %></p>
+                <p>Soil Texture: <%= growth.soil_texture %></p>
+                <p>Min Water:<%= growth.minimum_precipitation.mm %></p>
+                <p>Max Water:<%= growth.maximum_precipitation.mm %></p>
+                <p>Min Temp: <%= growth.minimum_temperature.deg_f %></p>
+                <p>Max Temp<%= growth.maximum_temperature.deg_f %></p>
+                <p>Atmospheric Humidity: <%= growth.atmospheric_humidity %></p>
+                <% if (!currentUser) { %>
+                    <li class="nav-link"><a href="/auth/login">Log in to add to your garden</a></li>
+                <% } else { %>
+                    <form action="/garden/new/<%= currentUser.id %>" method="POST">
+                        <input hidden type="text" name="name" value="<%= plant.common_name %>">
+                        <input hidden type="text" name="scientificName" value="<%= plant.scientific_name %>">
+                        <input hidden type="text" name="image" value="<%= plant.image_url %>">
+                        <input hidden type="text" name="slug" value="<%= plant.slug %>">
+                        <button class="btn landing-btn" type="submit">Add to Garden</button>
+                    </form>
+                <% } %>
+                </p>
+            </div>
+          </div>
     </div>
 </div>
+

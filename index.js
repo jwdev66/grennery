@@ -21,7 +21,7 @@ app.use(methodOverride("_method"))
 
 // session middleware
 app.use(session({
-    secret: process.env.SESSION_SECRET,
+    secret: process.env.SESSION_SECRET, 
     resave: false,
     saveUnitialized: true
 }))
@@ -45,10 +45,10 @@ app.use((req, res, next)=>{
 // source: https://medium.com/@SigniorGratiano/image-uploads-with-multer-f306469ef2
 
 app.use(cors())
-app.use(express.json()); //Used to parse JSON bodies
+app.use(express.json()); // Used to parse JSON bodies
 app.use(express.urlencoded({extended: true })); //Parse URL-encoded bodies
 
-// // use controllers
+// use controllers
 app.use("/auth", require("./controllers/auth.js"))
 app.use("/plant", require("./controllers/plant.js"))
 app.use("/garden", require("./controllers/garden.js"))

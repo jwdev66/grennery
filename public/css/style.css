@@ -25,6 +25,7 @@ body {
 }
 .navbar {
     background-color: #096771;
+    padding: 50px 0px 0px 0px;
 }
 .nav-btn {
     border-color: #C8D692;
@@ -58,6 +59,15 @@ body {
     border: 1px solid #C8D692;
     border-radius: 4px;
     width: 15rem;
+}
+.explore-card {
+    width: 60%;
+    color: #096771;
+    justify-content: center;
+}
+.explore-img {
+    max-width: 75%;
+    padding: 10px 0px 0px 0px;
 }
 .capitalize {
     text-transform: capitalize;

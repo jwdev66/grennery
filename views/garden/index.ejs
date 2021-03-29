@@ -15,7 +15,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <a href="/explore/<%= plant.slug %>" class="card-link, btn btn-info">Details</a>
+                                <a href="/garden/plant/<%= plant.id %>" class="card-link, btn landing-btn">Details</a>
                                 <div id="deletebtn">
                                     <form method="POST" action="/plant/<%= plant.id %>/?_method=DELETE">
                                         <input type="submit" value="-" class="card-link btn btn-danger">
@@ -31,3 +31,4 @@
         </div>
     </div>
 </div>
+
